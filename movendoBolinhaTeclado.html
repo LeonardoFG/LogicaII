@@ -17,6 +17,9 @@
     var direita = 39;
     var baixo = 40;
 
+    // taxa de incremento
+    var taxa = 10;
+
     function desenhaCirculo(x, y, raio) {
 
         pincel.fillStyle = 'blue';
@@ -39,8 +42,20 @@
     setInterval(atualizaTela, 20);
 
     function leDoTeclado(evento) {
-
-        // sabemos que é através de evento.keyCode que temos acesso ao código da tecla pressionada
+        // sua lógica virá aqui
+        if (evento.keyCode == esquerda) {
+            x = x - taxa;
+        }
+        if (evento.keyCode == cima) {
+            y = y - taxa;
+        }
+        if (evento.keyCode == direita) {
+            x = x + taxa;
+        }
+        if (evento.keyCode == baixo) {
+            y = y + taxa;
+        }
+    
     }
 
    document.onkeydown = leDoTeclado;
