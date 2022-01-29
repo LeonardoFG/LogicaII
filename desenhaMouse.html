@@ -19,10 +19,23 @@
             pincel.arc(x, y, 10, 0, 2 * 3.14);
             pincel.fill();
         }
-
         console.log(x + ',' + y);
     }
 
     tela.onmousemove = desenhaCirculo;
+
+    function habilitaDesenhar() {
+
+        desenha = true;
+    }
+
+    function desabilitaDesenhar() {
+
+        desenha = false;
+    }
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
 
 </script>
