@@ -10,6 +10,8 @@
     var x = 20;
     var y = 20;
 
+    // códigos do teclado
+
     function desenhaCirculo(x, y, raio) {
 
         pincel.fillStyle = 'blue';
@@ -30,5 +32,12 @@
     }
 
     setInterval(atualizaTela, 20);
+
+    function leDoTeclado(evento) {
+
+        // como saber qual tecla foi pressionada?
+    }
+
+   document.onkeydown = leDoTeclado;
 
 </script>
