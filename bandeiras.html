@@ -49,7 +49,7 @@ function desenhaBandeiraAlemanha() {
 
 var bandBrasil = true;
 
-function trocaBandeira() {
+/*function trocaBandeira() {
 
     if(bandBrasil == true) {
         desenhaBandeiraBrasil();
@@ -57,7 +57,16 @@ function trocaBandeira() {
     } else {
         desenhaBandeiraAlemanha();
         bandBrasil = true;
+    }*/
+
+function trocaBandeira() { // outra solução
+
+    if(bandBrasil) {
+        desenhaBandeiraBrasil();
+    } else {
+        desenhaBandeiraAlemanha();
     }
+    bandBrasil = !bandBrasil;
 }
 
 setInterval(trocaBandeira, 3000);
