@@ -9,7 +9,8 @@
 
     var desenha = false;
 
-    function desenhaCirculo(evento) {
+  // atribuindo diretamente a função anônima
+   tela.onmousemove = function(evento) {
 
         if(desenha) {
             var x = evento.pageX - tela.offsetLeft;
@@ -22,15 +23,11 @@
         console.log(x + ',' + y);
     }
 
-    tela.onmousemove = desenhaCirculo;
-
-    // atribuindo diretamente a função anônima
     tela.onmousedown = function() {
 
         desenha = true;
     }
 
-    // atribuindo diretamente a função anônima
      tela.onmouseup = function() {
 
         desenha = false;
