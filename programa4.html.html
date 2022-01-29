@@ -15,15 +15,14 @@
         pincel.fill();
     }
 
-        function limpaTela() {
+    function limpaTela() {
+    pincel.clearRect(0, 0, 600, 400);
+    }
 
-            pincel.clearRect(0, 0, 600, 400);
+    function exibeMensagemNoConsole() {
+    console.log('Chamei função');
+    }
 
-        }
+    setInterval(exibeMensagemNoConsole, 1000);
 
-        for(var x = 20; x < 600; x++) {
-            limpaTela();
-            desenhaCirculo(x, 20, 10);
-
-        }
 </script>
