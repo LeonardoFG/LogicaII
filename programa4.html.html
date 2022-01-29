@@ -13,10 +13,12 @@
         pincel.beginPath();
         pincel.arc(x, y, raio, 0, 2 * Math.PI);
         pincel.fill();
-
     }
 
-        for(var x = 20; x < 600; x++) {
+             for(var x = 20; x < 600; x++) {
+            pincel.clearRect(0, 0, 600, 400); //limpa o canvas
             desenhaCirculo(x, 20, 10);
+
         }
+
 </script>
