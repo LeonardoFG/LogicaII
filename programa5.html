@@ -12,7 +12,7 @@
 
     function desenhaCirculo(x, y, raio, cor) {
 
-        pincel.fillStyle = cor;
+    pincel.fillStyle = cor;
     pincel.beginPath();
     pincel.arc(x, y, raio, 0, 2 * Math.PI);
     pincel.fill();
@@ -32,14 +32,15 @@
     }
 
     function sorteiaPosicao(maximo) {
-
     return Math.floor(Math.random() * maximo);
-
     }
+
+    function atualizaTela() {
 
     var xAleatorio = sorteiaPosicao(600);
     var yAleatorio = sorteiaPosicao(400);
-
     desenhaAlvo(xAleatorio, yAleatorio);
+
+    }
 
 </script>
