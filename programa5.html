@@ -21,26 +21,30 @@
 
     function limpaTela() {
         pincel.clearRect(0, 0, 600, 400);
+
     }
 
     function desenhaAlvo(x, y) {
-
-    desenhaCirculo(x, y, raio+20, 'red');
+        desenhaCirculo(x, y, raio+20, 'red');
     desenhaCirculo(x, y, raio+10, 'white');
     desenhaCirculo(x, y, raio, 'red');
 
-    }
+   }
 
     function sorteiaPosicao(maximo) {
+
     return Math.floor(Math.random() * maximo);
     }
 
     function atualizaTela() {
+    limpaTela();
 
-    var xAleatorio = sorteiaPosicao(600);
+        var xAleatorio = sorteiaPosicao(600);
     var yAleatorio = sorteiaPosicao(400);
     desenhaAlvo(xAleatorio, yAleatorio);
 
     }
+
+    setInterval(atualizaTela, 500);
 
 </script>
