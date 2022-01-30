@@ -49,6 +49,27 @@
         desenha = false;
     }
 
+    //O desafio desse exercício é trocar a cor utilizada para desenhar o círculo de acordo com o quadrado da cor que clicarmos. Se clicarmos no verde, usaremos a cor verde quando formos desenhar e por aí vai. 
+
+    function trocaCorAtual(x, y) {
+
+        if((x > xVermelho) && (x < xVermelho + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+
+            var corAtual = 'red';
+        }
+
+        if((x > xVerde) && (x < xVerde + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+
+            var corAtual = 'green';
+        }
+
+        if((x > xAzul) && (x < xAzul + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+
+            var corAtual = 'blue';
+        }
+
+    }
+
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
     pincel.fillStyle = 'lightgray';
