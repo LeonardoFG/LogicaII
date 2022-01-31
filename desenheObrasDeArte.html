@@ -33,9 +33,10 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if(desenha && areaDesenho(x, y)) { //adicionei a área que é permitido desenhar
+        if((desenha) 
+            && (areaDesenho(x, y))) { //adicionei a área que é permitido desenhar
 
-            desenhaCirculo(x, y, 5, corAtual);
+                desenhaCirculo(x, y, 5, corAtual);
         }
     }
 
@@ -49,29 +50,35 @@
         desenha = false;
     }
 
-    //O desafio desse exercício é trocar a cor utilizada para desenhar o círculo de acordo com o quadrado da cor que clicarmos. Se clicarmos no verde, usaremos a cor verde quando formos desenhar e por aí vai. 
+    /*O desafio desse exercício é trocar a cor utilizada para desenhar o círculo de acordo com o quadrado da cor que clicarmos.
+     Se clicarmos no verde, usaremos a cor verde quando formos desenhar e por aí vai. */
 
     function trocaCorAtual(evento) {
 
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if(y > yQuadrados && y < yQuadrados + tamanhoQuadrados) {
-            if(x > xVermelho && x < xVermelho + tamanhoQuadrados) {
+        if((y > yQuadrados)
+            && (y < yQuadrados + tamanhoQuadrados)) {
+                
+                if((x > xVermelho) 
+                    && (x < xVermelho + tamanhoQuadrados)) {
 
-                corAtual = 'red';
-                console.log(corAtual);
+                        corAtual = 'red';
+                        console.log(corAtual);
 
-            } else if(x > xVerde && x < xVerde + tamanhoQuadrados) {
+                } else if((x > xVerde)
+                    && (x < xVerde + tamanhoQuadrados)) {
 
-                corAtual = 'green';
-                console.log(corAtual);
+                        corAtual = 'green';
+                        console.log(corAtual);
 
-            } else if(x > xAzul && x < xAzul + tamanhoQuadrados) {
+                } else if((x > xAzul)
+                    && (x < xAzul + tamanhoQuadrados)) {
 
-                corAtual = 'blue';
-                console.log(corAtual);
-            }
+                        corAtual = 'blue';
+                        console.log(corAtual);
+                }
         }    
         
     }
@@ -80,8 +87,10 @@
 
     function areaDesenho(x, y) {
 
-        if(x >= 0 && x < 3*tamanhoQuadrados && y >= 0 && y < tamanhoQuadrados) {
-            return false;
+        if((x >= 0)
+            && (x < 3*tamanhoQuadrados)
+                && (y >= 0 && y < tamanhoQuadrados)) {
+                    return false;
         } else {
             return true;
         }
