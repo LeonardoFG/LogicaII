@@ -33,7 +33,8 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if(desenha) {
+        // usando a nova função 
+        if(desenha && podeDesenharNaArea(x,y)) {
 
             desenhaCirculo(x, y, 5, corAtual);
         }
@@ -49,6 +50,17 @@
         desenha = false;
     }
 
+   // nova função define área de desenho
+    function podeDesenharNaArea(x, y) {
+
+        if(x >= 0 && x < 3*tamanhoQuadrados && y >= 0 && y < tamanhoQuadrados) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
     pincel.fillStyle = 'lightgray';
@@ -62,7 +74,7 @@
     var yQuadrados = 0;
     var tamanhoQuadrados = 50;
 
-    desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+    desenhaPaletaDeCores(); // desenha a paletaDeCores
 
     tela.onmousemove = lidaComMovimentoDoMouse;
 
