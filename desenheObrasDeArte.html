@@ -33,7 +33,7 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if((desenha) && (areaDesenho(x, y))) { //adicionei a área que é permitido desenhar
+        if(desenha && areaDesenho(x, y)) { //adicionei a área que é permitido desenhar
 
             desenhaCirculo(x, y, 5, corAtual);
         }
@@ -56,18 +56,18 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if((y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
-            if((x > xVermelho) && (x < xVermelho + tamanhoQuadrados)) {
+        if(y > yQuadrados && y < yQuadrados + tamanhoQuadrados) {
+            if(x > xVermelho && x < xVermelho + tamanhoQuadrados) {
 
                 var corAtual = 'red';
                 console.log(corAtual);
 
-            } else if((x > xVerde) && (x < xVerde + tamanhoQuadrados)) {
+            } else if(x > xVerde && x < xVerde + tamanhoQuadrados) {
 
                 var corAtual = 'green';
                 console.log(corAtual);
 
-            } else if((x > xAzul) && (x < xAzul + tamanhoQuadrados)) {
+            } else if(x > xAzul && x < xAzul + tamanhoQuadrados) {
 
                 var corAtual = 'blue';
                 console.log(corAtual);
