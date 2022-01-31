@@ -4,22 +4,6 @@
 
 <script>
 
-    var tela = document.querySelector('canvas');
-    var pincel = tela.getContext('2d');
-    pincel.fillStyle = 'lightgray';
-    pincel.fillRect(0, 0, 600, 400);
-
-    var x;
-    var y;
-
-    var desenha = false;
-    var corAtual = 'blue';
-    var xVermelho = 0;
-    var xVerde  = 50;
-    var xAzul = 100;
-    var yQuadrados = 0;
-    var tamanhoQuadrados = 50;
-
     function desenhaQuadrado(x, y, tamanho, cor) {
 
         pincel.fillStyle = cor;
@@ -91,6 +75,23 @@
         }    
         
     }
+
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x;
+    var y;
+
+    var desenha = false;
+    var corAtual = 'blue';
+    var xVermelho = 0;
+    var xVerde  = 50;
+    var xAzul = 100;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 50;
 
     desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
 
