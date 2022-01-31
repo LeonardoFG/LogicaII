@@ -72,38 +72,30 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        
-            if((x > xVermelho) && (x < xVermelho + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+        if((y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+            if((x > xVermelho) && (x < xVermelho + tamanhoQuadrados)) {
 
                 var corAtual = 'red';
                 return corAtual;
                 console.log(corAtual);
             }
 
-            if((x > xVerde) && (x < xVerde + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+            if((x > xVerde) && (x < xVerde + tamanhoQuadrados)) {
 
                 var corAtual = 'green';
                 return corAtual;
                 console.log(corAtual);
             }
 
-            if((x > xAzul) && (x < xAzul + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
+            if((x > xAzul) && (x < xAzul + tamanhoQuadrados)) {
 
                 var corAtual = 'blue';
                 return corAtual;
                 console.log(corAtual);
             }
-
+        }    
         
     }
-
-    // redesenha a palete de cores
-    function atualizaTela() {
-
-        desenhaPaletaDeCores()
-    }
-
-    setInterval(atualizaTela, 200);
 
     //desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
 
