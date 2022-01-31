@@ -33,7 +33,7 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        if(desenha) {
+        if((desenha) && (areaDesenho(x, y))) { //adicionei a área que é permitido desenhar
 
             desenhaCirculo(x, y, 5, corAtual);
         }
@@ -76,14 +76,24 @@
         
     }
 
+    //Outro ponto é que não podemos desenhar em cima da nossa paleta, ou melhor, não podemos desenhar na linha inteira na qual faz parte.
+
+    function areaDesenho(x, y) {
+
+        if(x >= 0 && x < 3*tamanhoQuadrados && y >= 0 && y < tamanhoQuadrados) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
     pincel.fillStyle = 'lightgray';
     pincel.fillRect(0, 0, 600, 400);
 
-    var x;
-    var y;
+    //var x;
+    //var y;
 
     var desenha = false;
     var corAtual = 'blue';
@@ -95,12 +105,12 @@
 
     desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
 
-    tela.onclick = trocaCorAtual;
-
     tela.onmousemove = lidaComMovimentoDoMouse;
 
     tela.onmousedown = habilitaDesenhar;
 
     tela.onmouseup = desabilitaDesenhar;
+
+    tela.onclick = trocaCorAtual;
 
 </script>
