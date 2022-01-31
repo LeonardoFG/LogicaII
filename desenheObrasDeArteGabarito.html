@@ -50,7 +50,6 @@
         desenha = false;
     }
 
-   // nova função define área de desenho
     function podeDesenharNaArea(x, y) {
 
         if(x >= 0 && x < 3*tamanhoQuadrados && y >= 0 && y < tamanhoQuadrados) {
@@ -59,6 +58,14 @@
             return true;
         }
 
+    }
+
+    function selecionaCor(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        // agora que sei onde o usuário clicou, posso verificar em qual cor da paleta ele esta clicando!
     }
 
     var tela = document.querySelector('canvas');
@@ -81,5 +88,9 @@
     tela.onmousedown = habilitaDesenhar;
 
     tela.onmouseup = desabilitaDesenhar;
+
+    // AQUI! Estou associando a função `selecionaCor` ao evento `onclick` de tela!
+
+    tela.onclick = selecionaCor;
 
 </script>
