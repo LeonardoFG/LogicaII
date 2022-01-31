@@ -56,16 +56,22 @@
         if((x > xVermelho) && (x < xVermelho + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
 
             var corAtual = 'red';
+            return corAtual;
+            console.log(corAtual);
         }
 
         if((x > xVerde) && (x < xVerde + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
 
             var corAtual = 'green';
+            return corAtual;
+            console.log(corAtual);
         }
 
         if((x > xAzul) && (x < xAzul + tamanhoQuadrados) && (y > yQuadrados) && (y < yQuadrados + tamanhoQuadrados)) {
 
             var corAtual = 'blue';
+            return corAtual;
+            console.log(corAtual);
         }
 
     }
@@ -77,7 +83,7 @@
 
     var x;
     var y;
-    
+
     var desenha = false;
     var corAtual = 'blue';
     var xVermelho = 0;
@@ -87,6 +93,8 @@
     var tamanhoQuadrados = 50;
 
     desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+
+    trocaCorAtual();
 
     tela.onmousemove = lidaComMovimentoDoMouse;
 
